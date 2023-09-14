@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Note App</title>
+</head>
+<body>
+<center>
+    <h1>My Notes</h1>
+
+    <script>
+        function addNote() {
+            var noteInput = document.getElementById("noteInput");
+            var noteText = noteInput.value;
+
+            if (noteText.trim() !== "") {
+                var noteList = document.getElementById("noteList");
+                var newNote = document.createElement("div");
+                newNote.textContent = noteText;
+                noteList.appendChild(newNote);
+                noteInput.value = "";
+            }
+        }
+    </script>
+<input type="text" id="noteInput" placeholder="Add a note" style="height:100px;width=300px">
+    <button onclick="addNote()">Add</button>
+    <div id="noteList"></div>
+</center>
+
+</body>
+</html>
+
